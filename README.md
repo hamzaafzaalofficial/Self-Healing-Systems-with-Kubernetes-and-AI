@@ -5,20 +5,20 @@ This guide walks you through setting up a Kubernetes cluster using Minikube, dep
 ---
 
 ## Table of Contents
-# Setting Up Kubernetes Cluster(#setting-up-kubernetes-cluster)
-# Minikube Setup(#minikube-setup)
-# Docker Setup(#docker-setup)
-# Kubectl & Helm Setup(#kubectl--helm-setup)
-# Initializing Minikube Cluster(#initializing-minikube-cluster)
-# Setting Up Prometheus & Grafana(#setting-up-prometheus--grafana)
-# Fetching Metrics(#fetching-metrics)
-# Setting Up Python Environment(#setting-up-python-environment)
-# Pre-processing, Training & Testing (#pre-processing-training--testing)
-# Creating Docker Image(#creating-docker-image)
-# Deploying to Minikube Cluster(#deploying-to-minikube-cluster)
-# Configuring Prometheus Scraping(#configuring-prometheus-scraping)
-# Adding Prometheus Alert Rules(#adding-prometheus-alert-rules)
-# Horizontal Pod Autoscaler (HPA)(#horizontal-pod-autoscaler-hpa)
+## Setting Up Kubernetes Cluster(#setting-up-kubernetes-cluster)
+## Minikube Setup(#minikube-setup)
+## Docker Setup(#docker-setup)
+## Kubectl & Helm Setup(#kubectl--helm-setup)
+## Initializing Minikube Cluster(#initializing-minikube-cluster)
+## Setting Up Prometheus & Grafana(#setting-up-prometheus--grafana)
+## Fetching Metrics(#fetching-metrics)
+## Setting Up Python Environment(#setting-up-python-environment)
+## Pre-processing, Training & Testing (#pre-processing-training--testing)
+## Creating Docker Image(#creating-docker-image)
+## Deploying to Minikube Cluster(#deploying-to-minikube-cluster)
+## Configuring Prometheus Scraping(#configuring-prometheus-scraping)
+## Adding Prometheus Alert Rules(#adding-prometheus-alert-rules)
+## Horizontal Pod Autoscaler (HPA)(#horizontal-pod-autoscaler-hpa)
 
 ---
 
