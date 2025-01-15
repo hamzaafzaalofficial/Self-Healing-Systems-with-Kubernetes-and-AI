@@ -268,7 +268,7 @@ spec:
 ```
 ---            
 ### Horizontal Pod Autoscaler (HPA)
-# Create an HPA to scale your application based on metrics:
+- Create an HPA to scale your application based on metrics:
 ###
 ```bash
 apiVersion: autoscaling/v2beta2
