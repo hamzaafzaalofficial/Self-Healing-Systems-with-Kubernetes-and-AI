@@ -76,16 +76,22 @@ kubectl version --client
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 chmod +x get_helm.sh
 ./get_helm.sh
-Initializing Minikube Cluster
-bash
-Copy
+# Initializing Minikube Cluster
+
 # Start Minikube with 6GB RAM and 4 CPUs
 minikube start --memory=6144 --cpus=4 --driver=docker --force
 
 # Create a namespace for monitoring
 kubectl create namespace monitoring
-# Setting Up Prometheus & Grafana
+```
 
+---
+
+### Setting Up Prometheus & Grafana
+
+---
+
+```bash
 # Add the Prometheus Helm repository
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 
@@ -101,9 +107,12 @@ kubectl edit svc -n monitoring prometheus-kube-prometheus-prometheus
 # Fetching Metrics
 # Fetch CPU usage metrics from Prometheus
 curl -G "http://192.168.49.2:32630/api/v1/query" --data-urlencode "query=rate(container_cpu_usage_seconds_total[1m])" -o metrics.json
-Setting Up Python Environment
-bash
-Copy
+```
+--- 
+### Setting Up Python Environment
+--- 
+
+```bash
 # Update the package list
 sudo apt update
 
@@ -118,9 +127,13 @@ source myenv/bin/activate
 # Install dependencies from requirements.txt:
 
 pip install -r requirements.txt
-# Pre-processing, Training & Testing
-# Pre-processing Script (pre-processing.py)
+```
+--- 
 
+### Pre-processing, Training & Testing
+### Pre-processing Script (pre-processing.py)
+
+```bash
 import json
 import pandas as pd
 
@@ -165,7 +178,9 @@ mkdir test
 cd test
 cp ../anomaly_model.pkl .
 cp ../requirements.txt .
+
 # Create a Dockerfile:
+
 
 FROM python:3.10-slim
 
@@ -186,18 +201,29 @@ CMD ["python", "anomaly_detection_pipeline.py"]
 
 # Set Docker environment to Minikube
 eval $(minikube docker-env)
-
-# Build the Docker image
+```
+---
+### Build the Docker image
+---
+```bash
 docker build -t my_new_image .
-Deploying to Minikube Cluster
-bash
-Copy
+```
+---
+# Deploying to Minikube Cluster
+---
+```bash
 # Create a deployment for the anomaly detection service
 kubectl create deployment anomaly-detection --image=my_new_image --namespace monitoring
 
 # Expose the deployment as a ClusterIP service
 kubectl expose deployment anomaly-detection --type=ClusterIP --port=8000 --target-port=8000 -n monitoring
+
+```
+---
+
 # Configuring Prometheus Scraping Add the following to your Prometheus configuration to scrape metrics from the anomaly detection service:
+---
+```bash
 
 additionalScrapeConfigs:
   - job_name: 'anomaly-detection'
@@ -212,9 +238,12 @@ additionalScrapeConfigs:
         regex: anomaly-detection
     metrics_path: /metrics
     scheme: http
-# Adding Prometheus Alert Rules
-# Create a PrometheusRule resource to alert on anomalies:
+```
 
+---
+### Adding Prometheus Alert Rules
+### Create a PrometheusRule resource to alert on anomalies:
+```bash
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
@@ -234,9 +263,13 @@ spec:
           annotations:
             summary: "Anomaly detected in system metrics"
             description: "An anomaly has been detected in the system metrics. Please investigate immediately."
-Horizontal Pod Autoscaler (HPA)
-# Create an HPA to scale your application based on metrics:
 
+```
+---            
+### Horizontal Pod Autoscaler (HPA)
+# Create an HPA to scale your application based on metrics:
+###
+```bash
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
@@ -257,3 +290,4 @@ spec:
         target:
           type: AverageValue
           averageValue: 100
+```
