@@ -221,7 +221,8 @@ kubectl expose deployment anomaly-detection --type=ClusterIP --port=8000 --targe
 ```
 ---
 
-# Configuring Prometheus Scraping Add the following to your Prometheus configuration to scrape metrics from the anomaly detection service:
+- Configuring Prometheus Scraping Add the following to your Prometheus configuration to scrape metrics from the anomaly detection service:
+
 ---
 ```bash
 
