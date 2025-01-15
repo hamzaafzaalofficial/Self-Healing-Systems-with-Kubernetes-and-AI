@@ -5,20 +5,20 @@ This guide walks you through setting up a Kubernetes cluster using Minikube, dep
 ---
 
 ## Table of Contents
-1. [Setting Up Kubernetes Cluster](#setting-up-kubernetes-cluster)
-2. [Minikube Setup](#minikube-setup)
-3. [Docker Setup](#docker-setup)
-4. [Kubectl & Helm Setup](#kubectl--helm-setup)
-5. [Initializing Minikube Cluster](#initializing-minikube-cluster)
-6. [Setting Up Prometheus & Grafana](#setting-up-prometheus--grafana)
-7. [Fetching Metrics](#fetching-metrics)
-8. [Setting Up Python Environment](#setting-up-python-environment)
-9. [Pre-processing, Training & Testing](#pre-processing-training--testing)
-10. [Creating Docker Image](#creating-docker-image)
-11. [Deploying to Minikube Cluster](#deploying-to-minikube-cluster)
-12. [Configuring Prometheus Scraping](#configuring-prometheus-scraping)
-13. [Adding Prometheus Alert Rules](#adding-prometheus-alert-rules)
-14. [Horizontal Pod Autoscaler (HPA)](#horizontal-pod-autoscaler-hpa)
+Setting Up Kubernetes Cluster(#setting-up-kubernetes-cluster)
+Minikube Setup(#minikube-setup)
+Docker Setup(#docker-setup)
+Kubectl & Helm Setup(#kubectl--helm-setup)
+Initializing Minikube Cluster(#initializing-minikube-cluster)
+Setting Up Prometheus & Grafana(#setting-up-prometheus--grafana)
+Fetching Metrics(#fetching-metrics)
+Setting Up Python Environment(#setting-up-python-environment)
+Pre-processing, Training & Testing (#pre-processing-training--testing)
+Creating Docker Image(#creating-docker-image)
+Deploying to Minikube Cluster(#deploying-to-minikube-cluster)
+Configuring Prometheus Scraping(#configuring-prometheus-scraping)
+Adding Prometheus Alert Rules(#adding-prometheus-alert-rules)
+Horizontal Pod Autoscaler (HPA)(#horizontal-pod-autoscaler-hpa)
 
 ---
 
